@@ -11,7 +11,7 @@
     <?php
 echo "Paul has installed\n";
 echo "<br>";
-echo ("The Eaglse has installed");
+echo ("The Eagle has installed");
 ?>
 <p> escape : wq </p>
 </body>

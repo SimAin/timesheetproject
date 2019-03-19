@@ -9,7 +9,9 @@
 <body>
     <h1>Hello World!</h1>
     <?php
-echo "Paul has installed";
+echo "Paul has installed\n";
+echo "<br>";
+echo ("The Eaglse has installed");
 ?>
 <p> escape : wq </p>
 </body>

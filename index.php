@@ -11,5 +11,6 @@
     <?php
 echo "Paul has installed";
 ?>
+<p> escape : wq </p>
 </body>
 </html>

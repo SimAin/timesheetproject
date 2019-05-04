@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -14,9 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
 
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   <!--  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css"> -->
 </head>
 
 <body>
@@ -24,7 +26,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="container">
-        <form class="form-signin">
+        <form class="form-signin" action = "verify_login.php" method="get">
             <div class="text-center mb-4">
                 <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
                 <i class="fab fa-angrycreative fa-7x" style="color: #32e0e0"></i>
@@ -32,14 +34,14 @@
             </div>
 
             <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
+                <input id="username" name ="username" class="form-control" placeholder="Email address" required=""
                     autofocus="">
-                <label for="inputEmail">Email address</label>
+                <label for="username">Email address</label>
             </div>
 
             <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                <label for="inputPassword">Password</label>
+                <input type="password"id="password" name="password" class="form-control" placeholder="Password" required="">
+                <label for="password">Password</label>
             </div>
 
             <div class="checkbox mb-3">
@@ -52,9 +54,9 @@
         </form>
     </div>
     <!-- Bootstrap JS -->
-    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<!--     <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
     <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script> -->
 </body>
 
 </html>

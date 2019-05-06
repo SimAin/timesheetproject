@@ -1,4 +1,9 @@
-
+<?php
+  // First we start a session which allow for us to store information as SESSION variables.
+  session_start();
+  // "require" creates an error message and stops the script. "include" creates an error and continues the script.
+  require "dbh.inc.php";
+?>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -25,33 +30,44 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="container">
-        <form class="form-signin" action = "verify_login.php" method="get">
-            <div class="text-center mb-4">
-                <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
-                <i class="fab fa-angrycreative fa-7x" style="color: #32e0e0"></i>
-                <h1 class="h3 mb-3 font-weight-normal">FDM Time Sheet</h1>
-            </div>
+        <div class="container">
+        <?php
+        if (!isset($_SESSION['id'])) {
 
-            <div class="form-label-group">
-                <input id="username" name ="username" class="form-control" placeholder="Email address" required=""
-                    autofocus="">
-                <label for="username">Email address</label>
-            </div>
+          echo '<form class="form-signin" action = "verify_login.php" method="POST">
+          <div class="text-center mb-4">
+              <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
+              <i class="fab fa-angrycreative fa-7x" style="color: #32e0e0"></i>
+              <h1 class="h3 mb-3 font-weight-normal">FDM Time Sheet</h1>
+          </div>
 
-            <div class="form-label-group">
-                <input type="password"id="password" name="password" class="form-control" placeholder="Password" required="">
-                <label for="password">Password</label>
-            </div>
+          <div class="form-label-group">
+              <input id="username" name ="username" class="form-control" placeholder="Email address" required=""
+                  autofocus="">
+              <label for="username">Email address</label>
+          </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted text-center">© 2019</p>
-        </form>
+          <div class="form-label-group">
+              <input type="password"id="password" name="password" class="form-control" placeholder="Password" required="">
+              <label for="password">Password</label>
+          </div>
+
+          <div class="checkbox mb-3">
+              <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+              </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" name="login-submit">Sign in</button>
+          <p class="mt-5 mb-3 text-muted text-center">© 2019</p>
+      </form>';
+        }
+        else if (isset($_SESSION['id'])) {
+            echo($_SESSION['id']);
+          echo '<form action="includes/logout.inc.php" method="post">
+            <button type="submit" name="login-submit">Logout</button>
+          </form>';
+        }
+        ?>
     </div>
     <!-- Bootstrap JS -->
     <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>

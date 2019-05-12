@@ -1,4 +1,5 @@
 <?php
+ session_start();
 require "defaults.inc.php";
 
 ?>
@@ -42,6 +43,7 @@ require "defaults.inc.php";
 
 
     <div class="container">
+    <form class="form-signin" action="save_timesheet.php" method="POST">
         <div class="row">
             <div class="col">
                 <div class="input-group mb-3">
@@ -61,7 +63,7 @@ require "defaults.inc.php";
             <div class="col-8 col-sm-6 col-lg-6">
                 <div class="row">
                     <div class="col-6 col-sm-6 col-lg-6">
-                        <h3>Project</h3>
+                        <h3></h3>
                     </div>
                     <div class="col-6 col-sm-6 col-lg-6">
                         <h3>Hours</h3>
@@ -71,6 +73,7 @@ require "defaults.inc.php";
         </div>
 
         <?php
+        
             foreach($defaultHours as $hours) { 
                 foreach($hours as $key => $value){ ?>
                     <div class="row wkDay">
@@ -80,14 +83,14 @@ require "defaults.inc.php";
                         <div class="col-8 col-sm-6 col-lg-6 ">
                             <div class="row">
                                 <div class="col-6 col-sm-6 col-lg-6">
-                                    <select class="custom-select d-block w-100" id="project" required="">
+                                    <!-- <select class="custom-select d-block w-100" id="project" required="">
                                         <option value="">project</option>
                                         <option>project 1</option>
                                         <option>project 2</option>
-                                    </select>
+                                    </select> -->
                                 </div>
                                 <div class="col-6 col-sm-6 col-lg-6">
-                                    <input type="number" class="form-control hours" value="<?=$value;?>" name="<?=$key;?>"  aria-label="...">
+                                    <input type="number" class="form-control hours" value="<?=$value;?>" id="<?=$key;?>" name="<?=$key;?>"  aria-label="...">
                                 </div>
                             </div>
                         </div>
@@ -112,8 +115,8 @@ require "defaults.inc.php";
 
         <div class="row">
             <div class="mx-auto">
-                <button type="button" class="btn btn-primary btn-lg"
-                    style="width: 300px; margin-top: 20px;">Submit</button>
+                <button class="btn btn-primary btn-lg" type="submit" id="save-sheet" name="save-sheet" style="width: 300px; margin-top: 20px;">Save</button>
+                </form>   
             </div>
         </div>
     </div>
@@ -127,7 +130,7 @@ require "defaults.inc.php";
     <script src="js/timesheet.js"></script>
     <script>
         $('.dateselect').datepicker({
-            format: 'mm/dd/yyyy',
+            dateFormat: "yyyy-mm-dd",
             // startDate: '-3d'
         });
     </script>

@@ -15,7 +15,7 @@
     		exit();
 		} else {
 			// We will connect to the database using prepared statements which work by us sending SQL to the database first, and then later we fill in the placeholders by sending the users data.
-			$db_sql = " SELECT * FROM login_details WHERE username=?;";
+			$db_sql = "SELECT * FROM login_details WHERE USERNAME=?;";
 
 			// Here we initialize a new statement using the connection from the dbh.inc.php file.
 			$stmt = $db_connection_object->stmt_init();
@@ -38,22 +38,22 @@
 				// Then we store the result into a variable.
 				if($row = $result->fetch_array()){
 					// We then check to see if the password the user entered matches the one from the database associated with that user.
-					if ($password !== $row['userpwd']) {
+					if ($password !== $row['PASSWORD']) {
 						// If there is an error we send the user back to the login page.
 						header("Location: ./login.php?error=wrongpwd");
 						exit();
 					// Then if they DO match, then we know it is the correct user that is trying to log in!
-					}else if ($password === $row['userpwd']) {
+					}else if ($password === $row['PASSWORD']) {
 						// Next we need to create session variables based on the users information from the database. If these session variables exist, then the website will know that the user is logged in.
 
 						// Now that we have the database data, we need to store them in session variables which are a type of variables that we can use on all pages that has a session running in it.
 						// This means we NEED to start a session HERE to be able to create the variables!
 						session_start();
 						// And NOW we create the session variables.
-						$_SESSION['id'] = $row['iud'];
-						$_SESSION['uid'] = $row['username'];
+						$_SESSION['id'] = $row['UID'];
+						$_SESSION['uid'] = $row['USERNAME'];
 						// Now the user is registered as logged in and we can now take them back to the timesheet page!
-						header("Location: ./timesheet.php?login=success");
+						header("Location: ./timesheet.php");
 						exit();
 					}
       			}else {

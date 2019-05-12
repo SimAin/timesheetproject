@@ -34,7 +34,7 @@
         <?php
         if (!isset($_SESSION['id'])) {
 
-          echo '<form class="form-signin" action = "verify_login.php" method="POST">
+          echo '<form class="form-signin" action= "verify_login.php" method="POST">
           <div class="text-center mb-4">
               <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
               <i class="fab fa-angrycreative fa-7x" style="color: #32e0e0"></i>

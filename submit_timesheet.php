@@ -1,36 +1,32 @@
 <?php 
-	$db_server="localhost"; 
-	$db_username="all_web_users";
-	$db_password="password123";
-	
-	$db_database="timesheet"; 
-	
-	$db_connection_object = new mysqli($db_server, $db_username, $db_password, $db_database); 
+	if(isset($_POST['action'])){
+		// Requires the connection script.
+        require 'dbh.inc.php';
+        
+        $id=$_POST['id'];
+        echo $id;
 
-	if ($db_connection_object->connect_error) {
-		die("MySQL Connection: " . $db_connection_object->connect_error); 
-    } 
-    
-    $monday=$_POST["monday"];
-	$tuesday=$_POST["tuesday"];
-	$wednesday=$_POST["wednesday"];
-	$thursday=$_POST["thursday"];
-	$friday=$_POST["friday"];
-	$saturday=$_POST["saturday"];
-    $sunday=$_POST["sunday"];
-    
+        if ($_POST['action'] && $_POST['id']) {
+            if ($_POST['action'] == 'Submit') {
+              echo "submit";
+            }else if ($_POST['action'] == 'Delete') {
+                echo "delete";
+            }
+        }
+        
+			// $db_sql = "UPDATE timesheets SET Submitted=1 WHERE ID=$id";
 
-	$db_sql = " INSERT INTO `TIMESHEETS` (`ID`, `USERID`, `WeekStart`, `MonHours`, `TusHours`, `WedHours`, `ThursHours`, `FriHours`, `SatHours`, `SunHours`) 
-    VALUES (NULL, '0', '2019-04-14', '$monday', '" . $tuesday ."', '" . $wednesday ."', '" . $thursday ."', '" . $friday ."', '" . $saturday ."', '" . $sunday ."'); ";
+			// $db_results = $db_connection_object->query($db_sql);
 
-    $db_results = $db_connection_object->query($db_sql);
-    
-	if ( $db_connection_object->query($db_sql) === TRUE) {
-        header("location: http://localhost/Lyra/Random_Conf.php/");
-	
-	} else {
-		die("Modify User Error: " . $db_sql . "<br>" . $db_connection_object->error);
+			
+			// if ( $db_results === TRUE) {
+			// 	header("location: ./Random_Conf.php");
+			// } else {
+			// 	print_r($db_results);
+			// 	die("Modify User Error: " . $db_sql . "<br>" . $db_connection_object->error);
+			// }
+		
+			
+			$db_connection_object->close();
 	}
-	
-    $db_connection_object->close();
 ?>

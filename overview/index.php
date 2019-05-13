@@ -1,6 +1,6 @@
 <?php
  session_start();
-require "timesheet_overview.php";
+require "index.inc.php";
 
 ?>
 
@@ -13,10 +13,10 @@ require "timesheet_overview.php";
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../fontawesome-free/css/all.min.css">
 <!-- <link rel="stylesheet" href="css/.css"> -->
-<link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+<link href="../jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
 
 
 
@@ -36,6 +36,9 @@ require "timesheet_overview.php";
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-calendar fa-2x"></i></a>
+				</li>
+				<li class="nav-item">
+                    <a class="nav-link" href="../includes/logout.php">Logout</a>
                 </li>
             </ul>
         </div>
@@ -47,8 +50,9 @@ require "timesheet_overview.php";
 	<?php
 	foreach($overview as $sheet) {?>
 		<p>
+		Timesheet - <?=$sheet['ID']?>
 			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample<?=$sheet['ID']?>" aria-expanded="false" aria-controls="collapseExample">
-				Timesheet - <?=$sheet['ID']?>
+				Show
 			</button>
 		</p>
 		<div class="row collapse" id="collapseExample<?=$sheet['ID']?>" style="border: 1px solid black; margin: 10px 0;">
@@ -96,9 +100,9 @@ require "timesheet_overview.php";
 
 
     <!-- Bootstrap JS -->
-    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
-    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

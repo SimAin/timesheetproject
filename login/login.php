@@ -1,8 +1,6 @@
 <?php
   // First we start a session which allow for us to store information as SESSION variables.
   session_start();
-  // "require" creates an error message and stops the script. "include" creates an error and continues the script.
-  require "dbh.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +19,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
 
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css"> 
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../css/login.css"> 
 </head>
 
 <body>
@@ -34,7 +32,7 @@
         <?php
         if (!isset($_SESSION['id'])) {
 
-          echo '<form class="form-signin" action= "verify_login.php" method="POST">
+          echo '<form class="form-signin" action= "login.inc.php" method="POST">
           <div class="text-center mb-4">
               <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
               <i class="fab fa-angrycreative fa-7x" style="color: #32e0e0"></i>
@@ -70,9 +68,9 @@
         ?>
     </div>
     <!-- Bootstrap JS -->
-    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
-    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

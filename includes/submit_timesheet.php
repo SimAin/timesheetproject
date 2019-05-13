@@ -1,7 +1,7 @@
 <?php 
 	if(isset($_POST['action'])){
 		// Requires the connection script.
-        require 'dbh.inc.php';
+        require '../dbh.inc.php';
         
         $id=$_POST['id'];
         echo $id;
@@ -18,7 +18,7 @@
 
 			
 			if ( $db_results === TRUE) {
-				header("location: ./Random_Conf.php");
+				header("location: ../overview/index.php");
 			} else {
 				print_r($db_results);
 				die("Modify User Error: " . $db_sql . "<br>" . $db_connection_object->error);

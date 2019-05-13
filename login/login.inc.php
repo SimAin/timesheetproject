@@ -3,7 +3,7 @@
 	if(isset($_POST['login-submit'])){
 		
 		// Requires the connection script.
-		require 'dbh.inc.php';
+		include "../dbh.inc.php"; 
 
 		// We grab all the data which we passed from the login form so we can use it later.
 		$username=$_POST["username"];
@@ -53,7 +53,7 @@
 						$_SESSION['id'] = $row['UID'];
 						$_SESSION['uid'] = $row['USERNAME'];
 						// Now the user is registered as logged in and we can now take them back to the timesheet page!
-						header("Location: ./timesheet.php");
+						header("Location: ../timesheet/index.php");
 						exit();
 					}
       			}else {

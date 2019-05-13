@@ -1,7 +1,6 @@
 <?php
  session_start();
-require "defaults.inc.php";
-
+    require "index.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +12,10 @@ require "defaults.inc.php";
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../fontawesome-free/css/all.min.css">
 <!-- <link rel="stylesheet" href="css/.css"> -->
-<link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+<link href="../jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
 
 
 
@@ -38,7 +37,7 @@ require "defaults.inc.php";
                     <a class="nav-link" href="#"><i class="far fa-calendar fa-2x"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./logout.php">Logout</a>
+                    <a class="nav-link" href="../includes/logout.php">Logout</a>
                 </li>
             </ul>
         </div>
@@ -46,7 +45,7 @@ require "defaults.inc.php";
 
 
     <div class="container">
-    <form class="form-signin" action="save_timesheet.php" method="POST">
+    <form class="form-signin" action="../includes/save_timesheet.php" method="POST">
         <div class="row">
             <div class="col">
                 <div class="input-group mb-3">
@@ -120,6 +119,7 @@ require "defaults.inc.php";
         <div class="row">
             <div class="mx-auto">
                 <button class="btn btn-primary btn-lg" type="submit" id="save-sheet" name="save-sheet" style="width: 300px; margin-top: 20px;">Save</button>
+                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>"/>
                 </form>   
             </div>
         </div>
@@ -128,10 +128,10 @@ require "defaults.inc.php";
 
 
     <!-- Bootstrap JS -->
-    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
-    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/timesheet.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/timesheet.js"></script>
     <script>
         $('.dateselect').datepicker({
             dateFormat: "yyyy-mm-dd",

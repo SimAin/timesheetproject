@@ -37,6 +37,9 @@ require "defaults.inc.php";
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="far fa-calendar fa-2x"></i></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./logout.php">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -76,6 +79,7 @@ require "defaults.inc.php";
         
             foreach($defaultHours as $hours) { 
                 foreach($hours as $key => $value){ ?>
+
                     <div class="row wkDay">
                         <div class="col-4 col-sm-6 col-lg-6">
                             <h4><?=$key;?></h4>

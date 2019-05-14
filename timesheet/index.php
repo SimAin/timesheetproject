@@ -75,7 +75,6 @@
         </div>
 
         <?php
-        
             foreach($defaultHours as $hours) { 
                 foreach($hours as $key => $value){ ?>
 
@@ -86,11 +85,11 @@
                         <div class="col-8 col-sm-6 col-lg-6 ">
                             <div class="row">
                                 <div class="col-6 col-sm-6 col-lg-6">
-                                    <!-- <select class="custom-select d-block w-100" id="project" required="">
-                                        <option value="">project</option>
+                                    <select name="<?=$key;?>_project" class="custom-select d-block w-100" id="project" required="">
+                                        <option value="">Choose Project</option>
                                         <option>project 1</option>
                                         <option>project 2</option>
-                                    </select> -->
+                                    </select>
                                 </div>
                                 <div class="col-6 col-sm-6 col-lg-6">
                                     <input type="number" class="form-control hours" value="<?=$value;?>" id="<?=$key;?>" name="<?=$key;?>"  aria-label="...">

@@ -53,7 +53,7 @@
 						$_SESSION['id'] = $row['UID'];
 						$_SESSION['uid'] = $row['USERNAME'];
 						// Now the user is registered as logged in and we can now take them back to the timesheet page!
-						header("Location: ../timesheet/index.php");
+						header("Location: ../home/homePage.php");
 						exit();
 					}
       			}else {

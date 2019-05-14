@@ -47,24 +47,23 @@ require "index.inc.php";
 
     <div class="container">
 		
-	<?php
-	foreach($overview as $sheet) {?>
-		<p>
-		Timesheet - <?=$sheet['ID']?>
-			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample<?=$sheet['ID']?>" aria-expanded="false" aria-controls="collapseExample">
-				Show
-			</button>
-		</p>
-		<div class="row collapse" id="collapseExample<?=$sheet['ID']?>" style="border: 1px solid black; margin: 10px 0;">
-		
-		<?php 
-		foreach($sheet as $key => $value){ 
-			if($key == "Saved_status" || $key == "Submitted"){
-				continue;
-	   		}
-		?>
-		
+		<?php
+		foreach($overview as $sheet) {?>
+			<p>
+				Timesheet - <?=$sheet['ID']?>
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample<?=$sheet['ID']?>" aria-expanded="false" aria-controls="collapseExample">
+					Show
+				</button>
+			</p>
+			<div class="row collapse" id="collapseExample<?=$sheet['ID']?>" style="border: 1px solid black; margin: 10px 0;">
 			
+				<?php 
+				foreach($sheet as $key => $value){ 
+					if($key == "Saved_status" || $key == "Submitted"){
+						continue;
+					}
+				?>
+					
 				<div class="col-4 col-sm-6 col-lg-6" style="border-bottom: 1px solid #c8c8c8;">
 					<p><b><?=$key;?></b></p>
 				</div>
@@ -75,25 +74,29 @@ require "index.inc.php";
 						</div>
 					</div>
 				</div>
+						
+				<?php 
+				} 
+					if($sheet['Submitted'] == 0){?>
+						<form method="POST" action="../includes/submit_timesheet.php" style="margin-top: 20px;">
+							<input class="btn btn-success" type="submit" name="action" value="Submit"/>
+							<input class="btn btn-danger" type="submit" name="action" value="Delete"/>
+							<input type="hidden" name="id" value="<?php echo $sheet['ID']; ?>"/>
+						</form>
+						<!-- <button class="btn btn-primary btn-lg" type="submit" id="submit-sheet" name="submit-sheet" style="width: 300px; margin-top: 20px;">Submit</button>
+						<button class="btn btn-primary btn-lg" type="submit" id="del-sheet" name="del-sheet" style="width: 300px; margin-top: 20px;">Deleted</button> -->
+				<?php
+				}?>
 			
-		
-		
-	<?php 
-		} 
-		if($sheet['Submitted'] == 0){?>
-			<form method="POST" action="submit_timesheet.php" style="margin-top: 20px;">
-				<input class="btn btn-success" type="submit" name="action" value="Submit"/>
-				<input class="btn btn-danger" type="submit" name="action" value="Delete"/>
-				<input type="hidden" name="id" value="<?php echo $sheet['ID']; ?>"/>
-			</form>
-			<!-- <button class="btn btn-primary btn-lg" type="submit" id="submit-sheet" name="submit-sheet" style="width: 300px; margin-top: 20px;">Submit</button>
-			<button class="btn btn-primary btn-lg" type="submit" id="del-sheet" name="del-sheet" style="width: 300px; margin-top: 20px;">Deleted</button> -->
-		<?php
+			</div>
+		<?php 
 		}?>
-		
-	</div>
-	<?php 
-	}?>
+
+		<br/>
+		<form method="POST" action="index.inc.php" style="margin-top: 20px;">
+			<button class="btn btn-lg btn-secondary" id="home" name="home" type="submit">Home</button>
+			<input type="hidden" name="id" value="<?php echo $sheet['ID']; ?>"/>
+		</form>
 
     </div>
 

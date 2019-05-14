@@ -7,6 +7,8 @@ if($_POST){
       header("Location: ../timesheet/index.php");
     }elseif(isset($_POST['defaults'])){
       header("location: http://localhost/Lyra/defaults/timesheetDefaults.php");
+    }elseif(isset($_POST['pending'])){
+      header("location: http://localhost/Lyra/overview/index.php");
     }
 }
 ?>

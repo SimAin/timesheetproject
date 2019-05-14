@@ -45,83 +45,87 @@
 
 
     <div class="container">
-    <form class="form-signin" action="../includes/save_timesheet.php" method="POST">
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control dateselect" placeholder="Date" aria-label="Date"
-                        aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2"><i class="far fa-calendar fa-1x"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-1 border-bottom">
-            <div class="col-4 col-sm-6 col-lg-6">
-                <h3>Day</h3>
-            </div>
-            <div class="col-8 col-sm-6 col-lg-6">
-                <div class="row">
-                    <div class="col-6 col-sm-6 col-lg-6">
-                        <h3></h3>
-                    </div>
-                    <div class="col-6 col-sm-6 col-lg-6">
-                        <h3>Hours</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <?php
-            foreach($defaultHours as $hours) { 
-                foreach($hours as $key => $value){ ?>
-
-                    <div class="row wkDay">
-                        <div class="col-4 col-sm-6 col-lg-6">
-                            <h4><?=$key;?></h4>
+        <form class="form-signin" action="../includes/save_timesheet.php" method="POST">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control dateselect" placeholder="Date" aria-label="Date"
+                            aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2"><i class="far fa-calendar fa-1x"></i></span>
                         </div>
-                        <div class="col-8 col-sm-6 col-lg-6 ">
-                            <div class="row">
-                                <div class="col-6 col-sm-6 col-lg-6">
-                                    <select name="<?=$key;?>_project" class="custom-select d-block w-100" id="project" required="">
-                                        <option value="">Choose Project</option>
-                                        <option>project 1</option>
-                                        <option>project 2</option>
-                                    </select>
-                                </div>
-                                <div class="col-6 col-sm-6 col-lg-6">
-                                    <input type="number" class="form-control hours" value="<?=$value;?>" id="<?=$key;?>" name="<?=$key;?>"  aria-label="...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-1 border-bottom">
+                <div class="col-4 col-sm-6 col-lg-6">
+                    <h3>Day</h3>
+                </div>
+                <div class="col-8 col-sm-6 col-lg-6">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <h3></h3>
+                        </div>
+                        <div class="col-6 col-sm-6 col-lg-6">
+                            <h3>Hours</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+                foreach($defaultHours as $hours) { 
+                    foreach($hours as $key => $value){ ?>
+
+                        <div class="row wkDay">
+                            <div class="col-4 col-sm-6 col-lg-6">
+                                <h4><?=$key;?></h4>
+                            </div>
+                            <div class="col-8 col-sm-6 col-lg-6 ">
+                                <div class="row">
+                                    <div class="col-6 col-sm-6 col-lg-6">
+                                        <select name="<?=$key;?>_project" class="custom-select d-block w-100" id="project" required="">
+                                            <option value="">Choose Project</option>
+                                            <option>project 1</option>
+                                            <option>project 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-lg-6">
+                                        <input type="number" class="form-control hours" value="<?=$value;?>" id="<?=$key;?>" name="<?=$key;?>"  aria-label="...">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-               <?php }
-                
-         }
-        ?>
-       
-        <div class="row wkDay">
-            <div class="col-4 col-sm-6 col-lg-6">
-                <h4>Total</h4>
-            </div>
-            <div class="col-8 col-sm-6 col-lg-6 ">
-                <div class="row d-flex justify-content-end">
-                    <div class="col-6 col-sm-6 col-lg-6 ">
-                        <input id="totalHours" type="text" class="form-control" placeholder="0" name="totalHours" aria-label="...">
+                <?php }
+                    
+            }
+            ?>
+        
+            <div class="row wkDay">
+                <div class="col-4 col-sm-6 col-lg-6">
+                    <h4>Total</h4>
+                </div>
+                <div class="col-8 col-sm-6 col-lg-6 ">
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-6 col-sm-6 col-lg-6 ">
+                            <input id="totalHours" type="text" class="form-control" placeholder="0" name="totalHours" aria-label="...">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div> 
+            </div> 
 
-        <div class="row">
-            <div class="mx-auto">
-                <button class="btn btn-primary btn-lg" type="submit" id="save-sheet" name="save-sheet" style="width: 300px; margin-top: 20px;">Save</button>
-                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>"/>
-                </form>   
-            </div>
-        </div>
+            <div class="row">
+                <div class="mx-auto">
+                    <button class="btn btn-primary btn-lg" type="submit" id="save-sheet" name="save-sheet" style="width: 300px; margin-top: 20px;">Save</button>
+                    <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>"/>
+                </div>
+            </div>  
+        </form>   
+        <form method="POST" action="index.inc.php" style="margin-top: 20px;">
+			<button class="btn btn-lg btn-secondary" id="home" name="home" type="submit">Home</button>
+			<input type="hidden" name="id" value="<?php echo $sheet['ID']; ?>"/>
+		</form>
     </div>
 
 

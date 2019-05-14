@@ -1,4 +1,12 @@
 <?php 
+        $id=$_SESSION['id'];
+
+        if($_POST){
+                if(isset($_POST['home'])){
+                header("Location: ../home/homePage.php");
+                }
+        }
+        
         require '../dbh.inc.php';
 
         $id=$_SESSION['id'];

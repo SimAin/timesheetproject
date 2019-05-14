@@ -38,6 +38,7 @@
   <div class="container">
        <form action="homePage.inc.php" method="post">
         <button class="btn btn-lg btn-primary btn-block" id="timesheet" name="timesheet" type="submit">Submit Timesheet</button>
+        <button class="btn btn-lg btn-primary btn-block" id="pending" name="pending" type="submit">Manage Saved Timesheets</button>
         <button class="btn btn-lg btn-primary btn-block" id="defaults" name="defaults" type="submit">Set Defaults</button>
         <button class="btn btn-lg btn-primary btn-block" id="history" type="submit">View History</button>
         <button class="btn btn-lg btn-primary btn-block" id="settings" type="submit">Manage Settings</button>

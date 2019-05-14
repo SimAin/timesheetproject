@@ -98,13 +98,18 @@
             </div> 
 
             <div class="row">
-            <div class="mx-auto">
-                <button class="btn btn-primary btn-lg" type="submit" id="submit_defaults" name="submit_defaults" style="width: 300px; margin-top: 20px;">Submit</button>
-                <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>"/>
-                </form>   
+                <div class="mx-auto">
+                    <button class="btn btn-primary btn-lg" type="submit" id="submit_defaults" name="submit_defaults" style="width: 300px; margin-top: 20px;">Submit</button>
+                    <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>"/>
+                    </form>   
+                </div>
             </div>
-        </div>
         </form>
+        <br/>
+		<form method="POST" action="timesheetDefaults.inc.php" style="margin-top: 20px;">
+			<button class="btn btn-lg btn-secondary" id="home" name="home" type="submit">Home</button>
+			<input type="hidden" name="id" value="<?php echo $sheet['ID']; ?>"/>
+		</form>
     </div>
 
     <!-- Bootstrap JS -->

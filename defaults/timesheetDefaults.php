@@ -66,11 +66,12 @@
                             <div class="col-8 col-sm-6 col-lg-6 ">
                                 <div class="row">
                                     <div class="col-6 col-sm-6 col-lg-6">
-                                        <select class="custom-select d-block w-100" id="project" required="">
-                                            <option value="">project</option>
+                                        <!-- TODO: Add Project selector
+                                            <select class="custom-select d-block w-100" id="project" required="">
+                                            <option >project</option>
                                             <option>project 1</option>
                                             <option>project 2</option>
-                                        </select>
+                                        </select> -->
                                     </div>
                                     <div class="col-6 col-sm-6 col-lg-6">
                                         <input type="number" class="form-control hours" value="<?=$value;?>" name="<?=$key;?>"  aria-label="...">

@@ -19,7 +19,7 @@
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><i class="fab fa-angrycreative fa-3x" style="color: #32e0e0"></i></a>
+    <img src="../LYRA_Logo.jpg" alt="logo" style="width:180px;height:63px;">
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">

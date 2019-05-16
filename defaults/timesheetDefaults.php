@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../fontawesome-free/css/all.min.css">
     <!-- <link rel="stylesheet" href="css/.css"> -->
     <link href="../jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../css/global.css">
     <title>Defaults</title>
 
 </head>
@@ -24,8 +24,9 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><i class="fab fa-angrycreative fa-3x" style="color: #32e0e0"></i></a>
+        <img src="../LYRA_Logo.jpg" alt="logo" style="width:180px;height:63px;">
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-cog fa-2x"></i></a>

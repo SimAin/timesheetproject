@@ -35,7 +35,7 @@
           echo '<form class="form-signin" action= "login.inc.php" method="POST">
           <div class="text-center mb-4">
               <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
-              <i class="fab fa-angrycreative fa-7x" style="color: #32e0e0"></i>
+              <img src="../LYRA_Logo.jpg" alt="logo" style="width:180px;height:63px;">
               <h1 class="h3 mb-3 font-weight-normal">FDM Time Sheet</h1>
           </div>
 
